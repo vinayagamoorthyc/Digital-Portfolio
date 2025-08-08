@@ -1,0 +1,93 @@
+// content/profile.ts
+export type SocialLink = { label: string; href: string }
+export type Profile = {
+  name: string
+  role: string
+  tagline: string
+  summary: string
+  about: string
+  location?: string
+  phone?: string
+  email?: string
+  resumeUrl?: string
+  socials: SocialLink[]
+  githubReposUrl?: string
+}
+
+export const profile: Profile = {
+  name: "Vinayaga Moorthy C",
+  role: "Software Trainee",
+  tagline: "Software Trainee at Infiniti Software Solutions",
+  summary:
+    "B.Tech IT graduate (May 2025) focused on building reliable, maintainable software. Interested in backend services, API design, and practical problem‑solving across the stack.",
+  about:
+    "I’m a Software Trainee at Infiniti Software Solutions. I focus on delivering clean, pragmatic solutions, collaborating with teams, and continually improving systems and developer experience. My interests span backend services, data, automation, and the occasional 3D/interactive work when it fits the product.",
+  location: "Chennai, Tamil Nadu",
+  phone: "9360810429",
+  email: "sanjaiiti2709@gmail.com",
+  resumeUrl: "/files/resume.pdf",
+  socials: [
+    { label: "GitHub", href: "https://github.com/vinayagamoorthyc" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/vinayaga-moorthy-c-bb8284276/" },
+  ],
+  githubReposUrl: "https://github.com/vinayagamoorthyc",
+}
+
+// components/sections/about.tsx
+import React from 'react';
+import { profile } from '../../content/profile';
+
+const AboutSection: React.FC = () => {
+  return (
+    <div>
+      <h2>About</h2>
+      <p>{profile.about}</p>
+      <div className="text-muted-foreground">{profile.location}</div>
+      <div className="text-muted-foreground">B.Tech IT completed May 2025</div>
+      {/* rest of code here */}
+    </div>
+  );
+}
+
+export default AboutSection;
+
+// content/projects.ts
+export type ProjectItem = {
+  title: string
+  blurb: string
+  image: string
+  repoUrl?: string
+  liveUrl?: string
+  demoUrl?: string
+}
+
+export const projects: ProjectItem[] = [
+  {
+    title: "PowerLend App",
+    blurb: "Browse, reserve, and schedule tool rentals with a streamlined UI.",
+    image: "/images/powerlend.png",
+    repoUrl: "https://github.com/vinayagamoorthyc",
+    liveUrl: "https://github.com/vinayagamoorthyc",
+  },
+  {
+    title: "Personalized ChatBot",
+    blurb: "AI assistant that adapts using GitHub context for personalized answers.",
+    image: "/personalized-chatbot-ui.png",
+    repoUrl: "https://github.com/vinayagamoorthyc",
+    liveUrl: "https://github.com/vinayagamoorthyc",
+  },
+  {
+    title: "Smart Mirror",
+    blurb: "A mirror enhanced with modular digital features and integrations.",
+    image: "/smart-mirror-electronics.png",
+    repoUrl: "https://github.com/vinayagamoorthyc",
+    demoUrl: "https://github.com/vinayagamoorthyc",
+  },
+  {
+    title: "LiBook App",
+    blurb: "A simple e‑library to explore categories and read content easily.",
+    image: "/elib-app-screenshot.png",
+    repoUrl: "https://github.com/vinayagamoorthyc",
+    liveUrl: "https://github.com/vinayagamoorthyc",
+  },
+]

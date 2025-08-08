@@ -1,0 +1,61 @@
+// content/profile.ts
+export const profile: Profile = {
+  name: "Vinayaga Moorthy C",
+  role: "Software Trainee",
+  tagline: "Software Trainee at Infiniti Software Solutions",
+  summary:
+    "B.Tech IT graduate (May 2025) focused on building reliable, maintainable software. Interested in backend services, API design, and practical problem‑solving across the stack.",
+  about:
+    "I’m a Software Trainee at Infiniti Software Solutions. I focus on delivering clean, pragmatic solutions, collaborating with teams, and continually improving systems and developer experience. My interests span backend services, data, automation, and the occasional 3D/interactive work when it fits the product.",
+  location: "Chennai, Tamil Nadu",
+  phone: "9360810429",
+  email: "sanjaiiti2709@gmail.com",
+  resumeUrl: "/files/resume.pdf",
+  socials: [
+    { label: "GitHub", href: "https://github.com/vinayagamoorthyc" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/vinayaga-moorthy-c-bb8284276/" },
+  ],
+  githubReposUrl: "https://github.com/vinayagamoorthyc",
+}
+
+// components/sections/about.tsx
+import { profile } from "@/content/profile";
+
+const AboutSection = () => {
+  return (
+    <div>
+      {/* other code here */}
+      <div className="text-muted-foreground">{profile.location || "Chennai, Tamil Nadu"}</div>
+      {/* rest of code here */}
+    </div>
+  );
+};
+
+export default AboutSection;
+
+// content/projects.ts
+export const projects: Project[] = [
+  {
+    title: "PowerLend App",
+    description: "A financial application for lending and borrowing.",
+    image: "/images/powerlend-hero.png",
+    repoUrl: "https://github.com/vinayagamoorthyc",
+    liveUrl: "https://github.com/vinayagamoorthyc",
+  },
+  // other projects here
+];
+
+// components/sections/contact.tsx
+import { profile } from "@/content/profile";
+
+const ContactSection = () => {
+  return (
+    <div>
+      {/* other code here */}
+      <a href={`mailto:${profile.email}`}>Email me</a>
+      {/* rest of code here */}
+    </div>
+  );
+};
+
+export default ContactSection;
